@@ -1,0 +1,817 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Md Raiyan Wahidi | AI & Python Developer</title>
+
+  <meta name="description" content="Official portfolio of Md Raiyan Wahidi, AI and Python Developer. Explore projects in artificial intelligence, face recognition, computer vision and Python development.">
+
+  <meta name="keywords" content="Md Raiyan Wahidi, AI Developer, Python Developer, Portfolio, Smart Attendance System, Computer Vision, Object Detection">
+
+  <meta name="author" content="Md Raiyan Wahidi">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://rayyan786655.github.io/">
+
+  <meta property="og:title" content="Md Raiyan Wahidi | AI & Python Developer">
+  <meta property="og:description" content="Explore my AI, Python and Computer Vision projects.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rayyan786655.github.io/">
+  <meta name="theme-color" content="#080b16">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #080b16;
+      --surface: #101629;
+      --surface2: #141c32;
+      --text: #f3f5ff;
+      --muted: #9aa6c2;
+      --purple: #9875ff;
+      --cyan: #50d9ff;
+      --border: rgba(255,255,255,.09);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    .glow {
+      position: fixed;
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      filter: blur(130px);
+      opacity: .12;
+      pointer-events: none;
+      z-index: -1;
+      background: var(--purple);
+      top: 5%;
+      left: -180px;
+    }
+
+    .glow.two {
+      background: var(--cyan);
+      top: 55%;
+      left: auto;
+      right: -200px;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(8,11,22,.82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 23px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    .logo span { color: var(--purple); }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 13px;
+      transition: .3s;
+    }
+
+    .nav-links a:hover { color: var(--cyan); }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      color: white;
+      background: transparent;
+      font-size: 27px;
+      cursor: pointer;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 0 70px;
+    }
+
+    .hero-content { max-width: 850px; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--cyan);
+      border: 1px solid rgba(80,217,255,.2);
+      background: rgba(80,217,255,.06);
+      padding: 8px 15px;
+      border-radius: 50px;
+      font-size: 12px;
+      margin-bottom: 28px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      background: #52e6a4;
+      border-radius: 50%;
+      box-shadow: 0 0 12px #52e6a4;
+    }
+
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 1.08;
+      letter-spacing: -3px;
+      margin-bottom: 18px;
+    }
+
+    .gradient {
+      background: linear-gradient(100deg, #a78bfa, #51d9ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .role {
+      font-size: clamp(19px, 3vw, 27px);
+      color: #c6cce0;
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .cursor {
+      color: var(--cyan);
+      animation: blink .8s infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    .hero-desc {
+      color: var(--muted);
+      max-width: 620px;
+      font-size: 15px;
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 13px;
+      transition: .3s;
+      border: 1px solid var(--border);
+    }
+
+    .btn-primary {
+      background: linear-gradient(110deg, #8d69f5, #526dff);
+      color: white;
+      border: none;
+      box-shadow: 0 8px 30px rgba(130,100,255,.2);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(100,120,255,.18);
+    }
+
+    .btn-outline { color: white; }
+
+    section { padding: 100px 0; }
+
+    .section-label {
+      color: var(--cyan);
+      font-size: 12px;
+      letter-spacing: 3px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(30px, 4vw, 43px);
+      letter-spacing: -1px;
+      margin-bottom: 15px;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      max-width: 620px;
+      font-size: 14px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 45px;
+      margin-top: 40px;
+      align-items: center;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 17px;
+    }
+
+    .about-card {
+      background: linear-gradient(145deg, #141d35, #0d1325);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 105px;
+      height: 105px;
+      margin: 0 auto 18px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: linear-gradient(140deg, #a17aff, #36c9f5);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 34px;
+      font-weight: 700;
+      color: white;
+      box-shadow: 0 0 35px rgba(143,111,255,.3);
+    }
+
+    .about-card h3 { font-size: 19px; }
+    .about-card p { color: var(--muted); font-size: 13px; }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-top: 38px;
+    }
+
+    .skill {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      padding: 21px 15px;
+      text-align: center;
+      color: #dce2f5;
+      font-size: 13px;
+      transition: .3s;
+    }
+
+    .skill:hover {
+      border-color: var(--purple);
+      transform: translateY(-5px);
+      background: var(--surface2);
+    }
+
+    .skill-icon {
+      font-size: 25px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .project {
+      background: linear-gradient(145deg, #141c32, #0d1324);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: .3s;
+    }
+
+    .project:hover {
+      transform: translateY(-7px);
+      border-color: rgba(151,117,255,.55);
+    }
+
+    .project-art {
+      height: 160px;
+      display: grid;
+      place-items: center;
+      font-size: 55px;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(143,108,255,.22), transparent 65%),
+        #11182c;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .project-body { padding: 23px; }
+
+    .project h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 18px;
+      margin-bottom: 11px;
+    }
+
+    .project p {
+      font-size: 12px;
+      color: var(--muted);
+      min-height: 65px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 17px 0;
+    }
+
+    .tag {
+      font-size: 10px;
+      color: var(--cyan);
+      background: rgba(80,217,255,.07);
+      border: 1px solid rgba(80,217,255,.15);
+      padding: 4px 9px;
+      border-radius: 30px;
+    }
+
+    .project-link {
+      color: #b59dff;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .contact-box {
+      margin-top: 35px;
+      background: linear-gradient(120deg, #171c36, #111b2c);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 45px 25px;
+      text-align: center;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 15px auto 25px;
+      max-width: 530px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 27px 0;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    footer a { color: var(--cyan); }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .socials a {
+      color: #c1c8df;
+      font-size: 13px;
+      transition: .3s;
+    }
+
+    .socials a:hover { color: var(--cyan); }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media(max-width: 800px) {
+      .projects-grid { grid-template-columns: 1fr 1fr; }
+      .skills-grid { grid-template-columns: repeat(3, 1fr); }
+      .about-grid { grid-template-columns: 1fr; }
+    }
+
+    @media(max-width: 600px) {
+      nav { height: 68px; }
+      .menu-btn { display: block; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        width: 100%;
+        background: #0d1325;
+        padding: 25px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links.active { display: flex; }
+
+      h1 { letter-spacing: -2px; }
+      section { padding: 75px 0; }
+
+      .projects-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .project p { min-height: auto; }
+      .contact-box { padding: 35px 18px; }
+    }
+
+    @media(prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Md Raiyan Wahidi",
+    "url": "https://rayyan786655.github.io/",
+    "jobTitle": "AI & Python Developer",
+    "sameAs": [
+      "https://github.com/rayyan786655",
+      "https://www.linkedin.com/in/md-rayyan-wahidi-286402390/"
+    ],
+    "knowsAbout": [
+      "Python",
+      "Artificial Intelligence",
+      "Computer Vision",
+      "Face Recognition",
+      "Object Detection"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <div class="glow"></div>
+  <div class="glow two"></div>
+
+  <header>
+    <nav class="container">
+      <a href="#home" class="logo">RAIYAN<span>.</span>DEV</a>
+
+      <button class="menu-btn" id="menuBtn"
+        aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container" id="home">
+      <div class="hero-content reveal">
+        <div class="eyebrow">
+          <span class="dot"></span>
+          AI & PYTHON DEVELOPER
+        </div>
+
+        <h1>
+          Hi, I'm <span class="gradient">Md Raiyan Wahidi</span>
+        </h1>
+
+        <div class="role">
+          I build <span class="gradient" id="typing"></span><span class="cursor">|</span>
+        </div>
+
+        <p class="hero-desc">
+          Passionate about Artificial Intelligence, Python and Computer Vision.
+          I enjoy turning ideas into practical technology through intelligent
+          and innovative software solutions.
+        </p>
+
+        <div class="buttons">
+          <a href="#projects" class="btn btn-primary">Explore My Projects ↗</a>
+          <a href="https://github.com/rayyan786655"
+             target="_blank" rel="noopener noreferrer"
+             class="btn btn-outline">GitHub Profile ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container reveal">
+        <div class="section-label">01 / ABOUT ME</div>
+        <h2 class="section-title">A little about me.</h2>
+        <p class="section-desc">
+          Developer focused on learning, creating and building technology.
+        </p>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              I'm Md Raiyan Wahidi, an aspiring AI and Python Developer
+              interested in building intelligent applications and real-world
+              software solutions.
+            </p>
+            <p>
+              My work includes AI-powered attendance systems, mental health
+              monitoring concepts and real-time object detection. I enjoy
+              exploring how machine learning and computer vision can solve
+              practical problems.
+            </p>
+            <p>
+              I believe in continuous learning, experimenting with new ideas
+              and improving my development skills through hands-on projects.
+            </p>
+          </div>
+
+          <div class="about-card">
+            <div class="avatar">RW</div>
+            <h3>Md Raiyan Wahidi</h3>
+            <p>AI & Python Developer</p>
+            <div class="socials">
+              <a href="https://github.com/rayyan786655"
+                 target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+              <a href="https://www.linkedin.com/in/md-rayyan-wahidi-286402390/"
+                 target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container reveal">
+        <div class="section-label">02 / MY EXPERTISE</div>
+        <h2 class="section-title">Technologies & Skills</h2>
+        <p class="section-desc">
+          Tools and technologies I work with and continue to explore.
+        </p>
+
+        <div class="skills-grid">
+          <div class="skill"><span class="skill-icon">🐍</span>Python</div>
+          <div class="skill"><span class="skill-icon">🧠</span>Artificial Intelligence</div>
+          <div class="skill"><span class="skill-icon">👁️</span>Computer Vision</div>
+          <div class="skill"><span class="skill-icon">📷</span>OpenCV</div>
+          <div class="skill"><span class="skill-icon">🤖</span>Machine Learning</div>
+          <div class="skill"><span class="skill-icon">🎯</span>Object Detection</div>
+          <div class="skill"><span class="skill-icon">🌐</span>HTML & CSS</div>
+          <div class="skill"><span class="skill-icon">⚡</span>JavaScript</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container reveal">
+        <div class="section-label">03 / MY WORK</div>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-desc">
+          Some of the AI and software projects I have been developing.
+        </p>
+
+        <div class="projects-grid">
+          <article class="project">
+            <div class="project-art">🛡️</div>
+            <div class="project-body">
+              <h3>AI Smart Attendance System</h3>
+              <p>
+                An AI-powered attendance solution using face recognition
+                and camera-based identification to help automate attendance.
+              </p>
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">OpenCV</span>
+                <span class="tag">Face Recognition</span>
+              </div>
+              <a class="project-link"
+                 href="https://github.com/rayyan786655"
+                 target="_blank" rel="noopener noreferrer">
+                Explore on GitHub ↗
+              </a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-art">🧠</div>
+            <div class="project-body">
+              <h3>AI Mental Health Monitoring</h3>
+              <p>
+                An AI-based monitoring project designed to explore mood,
+                stress and wellness patterns through user check-ins.
+              </p>
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Tkinter</span>
+              </div>
+              <a class="project-link"
+                 href="https://github.com/rayyan786655"
+                 target="_blank" rel="noopener noreferrer">
+                Explore on GitHub ↗
+              </a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-art">🎯</div>
+            <div class="project-body">
+              <h3>Real-Time Object Detection</h3>
+              <p>
+                A computer vision project exploring live object detection
+                through a camera using deep learning models.
+              </p>
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">YOLO</span>
+                <span class="tag">OpenCV</span>
+              </div>
+              <a class="project-link"
+                 href="https://github.com/rayyan786655"
+                 target="_blank" rel="noopener noreferrer">
+                Explore on GitHub ↗
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container reveal">
+        <div class="section-label">04 / GET IN TOUCH</div>
+        <h2 class="section-title">Let's connect.</h2>
+
+        <div class="contact-box">
+          <h2 class="section-title">Have an idea or opportunity?</h2>
+          <p>
+            I'm interested in connecting with developers, technology
+            enthusiasts and people working on innovative ideas.
+            Feel free to reach out through my profiles.
+          </p>
+
+          <div class="buttons" style="justify-content:center">
+            <a class="btn btn-primary"
+               href="https://www.linkedin.com/in/md-rayyan-wahidi-286402390/"
+               target="_blank" rel="noopener noreferrer">
+              Connect on LinkedIn ↗
+            </a>
+
+            <a class="btn btn-outline"
+               href="https://github.com/rayyan786655"
+               target="_blank" rel="noopener noreferrer">
+              Visit GitHub ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Md Raiyan Wahidi. Built with passion and Python-inspired creativity.</p>
+      <p style="margin-top:7px">
+        <a href="#home">Back to top ↑</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("active");
+      menuBtn.setAttribute("aria-expanded", String(isOpen));
+      menuBtn.textContent = isOpen ? "✕" : "☰";
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.textContent = "☰";
+      });
+    });
+
+    // Typing animation
+    const words = [
+      "AI Applications.",
+      "Python Projects.",
+      "Smart Solutions.",
+      "Computer Vision."
+    ];
+
+    const typing = document.getElementById("typing");
+    let wordIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function typeEffect() {
+      const word = words[wordIndex];
+
+      typing.textContent = word.substring(0, charIndex);
+
+      if (!deleting && charIndex < word.length) {
+        charIndex++;
+        setTimeout(typeEffect, 95);
+      } else if (!deleting) {
+        deleting = true;
+        setTimeout(typeEffect, 1300);
+      } else if (charIndex > 0) {
+        charIndex--;
+        setTimeout(typeEffect, 45);
+      } else {
+        deleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        setTimeout(typeEffect, 250);
+      }
+    }
+
+    typeEffect();
+
+    // Scroll reveal
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(element => {
+      observer.observe(element);
+    });
+
+    // Footer year
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
